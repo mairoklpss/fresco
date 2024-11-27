@@ -1,4 +1,5 @@
 import streamlit as st
+from time import sleep
 # Configuração da página
 st.set_page_config(page_title="Cadastro de Paciente - Saúde")
 
@@ -51,7 +52,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 if "cadastro_realizado" in st.session_state and st.session_state["cadastro_realizado"]:
-    
+    st.success("Cadastro realizado com sucesso! Seja Bem-Vindo(a)!")
 else:
     with st.form("cadastro"):
         # Informações pessoais
@@ -78,6 +79,5 @@ else:
             st.session_state["email"] = email
             st.session_state["senha"] = senha
             st.session_state["telefone"] = telefone
-            st.session_state["cadastro_realizado"] = True
-            st.success("Cadastro feito!")
+            st.session_state["cadastro_realizado"] = True           
             st.switch_page("pages\Informações Pessoais.py")
