@@ -1,0 +1,32 @@
+#cadastro-de-paciente{
+    font-size: 50px;
+    position: relative;
+    top: -30px;
+    text-align: center;
+    color: rgb(0, 238, 255);
+    font-size: 70px;
+    -webkit-text-stroke: 3px;
+    -webkit-text-stroke-color:rgb(0, 0, 0);
+
+}
+
+#informacoes-pessoais{
+    font-size: 35px;
+    text-align: center;
+    color:  rgb(0, 238, 255);
+    font-size: 35px;
+    -webkit-text-stroke: 1.5px;
+    -webkit-text-stroke-color:rgb(0, 0, 0);
+}
+#informacoes-de-contato{
+    font-size: 35px;
+    text-align: center;
+    color:  rgb(0, 238, 255);
+    font-size: 35px;
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color:rgb(0, 0, 0);
+
+}
+options = ["Opção 1", "Opção 2", "Opção 3"]
+selected_option = st.selectbox("Escolha uma opção:", options)
+st.write(f"Você escolheu: {selected_option}")
