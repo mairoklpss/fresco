@@ -66,7 +66,7 @@ else:
 
 # Exibe mensagem após envio do formulário
     if enviado:
-        if nome == "" and email == "" and senha == "" and telefone == "":
+        if nome == "" or email == "" or senha == "" and len(senha) < 8 or telefone == "":
             st.error("Por favor, preencha todos os campos obrigatórios.") 
         elif nome and email and telefone and senha and len(senha) < 8:
             st.error("A senha deve ter no mínimo 8 caracteres.")       
