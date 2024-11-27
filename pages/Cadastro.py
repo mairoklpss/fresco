@@ -66,12 +66,14 @@ else:
 
 # Exibe mensagem após envio do formulário
     if enviado:
-        if nome and email and telefone and senha and len(senha) < 8:
-            st.error("A senha deve ter no mínimo 8 caracteres.")
-        elif "@" not in email:
-            st.error("Digite seu email corretamente")       
-        elif nome and email and senha and telefone == "":
+        if nome == "" and email == "" and senha == "" and telefone == "":
             st.error("Por favor, preencha todos os campos obrigatórios.") 
+        elif nome and email and telefone and senha and len(senha) < 8:
+            st.error("A senha deve ter no mínimo 8 caracteres.")       
+        elif nome == "" and email == "" and senha == "" and telefone == "":
+            st.error("Por favor, preencha todos os campos obrigatórios.") 
+        elif "@" not in email:
+            st.error("Digite seu email corretamente")
         else:
             st.session_state["nome"] = nome
             st.session_state["data"] = telefone
