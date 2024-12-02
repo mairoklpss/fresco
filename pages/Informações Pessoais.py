@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.title("Cadastro de Paciente - Saúde")
+st.title("Cadastro de Paciente")
 st.markdown("Por favor, preencha os dados abaixo para o seu cadastro.")
 st.sidebar.image("img/png-transparent-health-care-public-health-medicine-hospital-health-logo-medical-care-mental-health-thumbnail-removebg-preview.png")
 image_url = "https://img.freepik.com/free-vector/medical-healthcare-blue-color_1017-26807.jpg"  # Exemplo: "imagens/fundo.jpg"
@@ -44,5 +44,5 @@ if "nome" in st.session_state and "email" in st.session_state and "senha" in st.
                 st.error("Por favor, verifique se todos os campos estão preenchidos.")
 
 else:
-    st.warning("Realize o Cadastro para acessar.")
+    st.warning("Realize o Cadastro para")
 

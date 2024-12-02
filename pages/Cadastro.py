@@ -57,7 +57,6 @@ else:
     with st.form("cadastro"):
         # Informações pessoais
         nome = st.text_input("Nome", placeholder = "Digite seu nome")
-        data = st.date_input("Data de Nascimento")
         sexo = st.radio("Sexo", ["Masculino", "Feminino"])
         email = st.text_input("Email", placeholder= "emailaqui@gmail.com")
         senha = st.text_input("Senha", placeholder= "(mín 8 caracteres)", type="password")
@@ -76,7 +75,6 @@ else:
             st.error("Digite seu email corretamente")
         else:
             st.session_state["nome"] = nome
-            st.session_state["data"] = telefone
             st.session_state["sexo"] = sexo
             st.session_state["email"] = email
             st.session_state["senha"] = senha

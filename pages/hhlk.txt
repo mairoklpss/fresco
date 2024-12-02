@@ -1,0 +1,6 @@
+if "nome" in st.session_state and "email" in st.session_state and "senha" in st.session_state and "condições" in st.session_state:
+
+
+
+else:
+    st.warning("Realize o cadastro para acessar.")    
