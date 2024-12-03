@@ -54,6 +54,8 @@ st.markdown(
 if "cadastro_realizado" in st.session_state and st.session_state["cadastro_realizado"]:
     st.success("Cadastro realizado com sucesso! Seja Bem-Vindo(a)!")
 else:
+  
+
     with st.form("cadastro"):
         # Informações pessoais
         nome = st.text_input("Nome", placeholder = "Digite seu nome")
@@ -80,4 +82,4 @@ else:
             st.session_state["senha"] = senha
             st.session_state["telefone"] = telefone
             st.session_state["cadastro_realizado"] = True           
-            st.switch_page("pages\Informações Pessoais.py")
+            st.switch_page("pages\Informações de Saúde.py")
