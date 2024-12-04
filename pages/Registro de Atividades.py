@@ -30,12 +30,9 @@ with st.form("registro"):
             st.session_state["atividade"] = atividade
             st.session_state["duraçao"] = duracao
 
-# Ordena atividades por data
-atividades_ordenadas = sorted(st.session_state.atvd, key=lambda x: x["data"])
-
 st.subheader("Atividades Registradas")
-if atividades_ordenadas:
-    for i, atvd in enumerate(atividades_ordenadas):
+if st.session_state.atvd:
+    for i, atvd in enumerate(st.session_state.atvd):
         col1, col2 = st.columns([0.8, 0.2])
         with col1:
             st.write(f"📈 {atvd['atvd']} - Duração: {atvd['duração']} minutos, realizada em {atvd['data']}")
