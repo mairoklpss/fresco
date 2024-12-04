@@ -6,11 +6,12 @@ st.title("Ingestão de Água")
 
 
 st.subheader('Registre a quantidade de água que você irá beber durante o dia.')
-st.write("Coletamos suas informações de saúde e calculamos a quantidade ideal de água que você deve ingerir todos os dias.")
+
 if 'aguaBebida' not in st.session_state:
     st.session_state.aguaBebida = []
 
 if "nome" in st.session_state and "email" in st.session_state and "senha" in st.session_state and "peso" in st.session_state:
+        st.write("Coletamos suas informações de saúde e calculamos a quantidade ideal de água que você deve ingerir todos os dias.")
         with st.form("ingestao de agua"):
             peso = st.session_state['peso']   
             agua = (peso*35)/1000
