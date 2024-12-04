@@ -64,6 +64,7 @@ if "nome" in st.session_state and "email" in st.session_state and "senha" in st.
     else:
         st.info("Nenhuma atividade registrada.")
 
+    #navegar pelo site.
     navegar = st.button("Ir para Ingestão de Água")
     if navegar:
         st.switch_page("pages\Ingestão de Água.py")      
