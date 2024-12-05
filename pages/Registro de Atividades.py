@@ -1,9 +1,26 @@
 import streamlit as st
 import matplotlib.pyplot as plt
 import pandas as pd
+st.set_page_config(page_title="Reistro de Atividades - Saúde")
+st.sidebar.image("img/png-transparent-health-care-public-health-medicine-hospital-health-logo-medical-care-mental-health-thumbnail-removebg-preview.png")
+image_url = "https://img.freepik.com/premium-vector/white-abstract-background-design_1208459-106.jpg?semt=ais_hybrid"  # Exemplo: "imagens/fundo.jpg"
 
-st.title("Registro de Atividades Físicas")
-st.subheader("Registre as atividades físicas realizadas durante o seu dia.")
+# Adicione a imagem de fundo com HTML e CSS
+st.markdown(
+    f"""
+    <style>
+    .stApp {{
+        background-image: url("{image_url}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+st.write('<p style="font-size:50px;text-align:center;font-weight:bold">Registro de Atividades Físicas</p>',unsafe_allow_html=True)
+st.write('<p style="font-size:20px;text-align:center;font-weight:bold">Registre as atividades físicas realizadas durante o seu dia.</p>',unsafe_allow_html=True)
 # Inicializa o estado se não existir
 if "atvd" not in st.session_state:
     st.session_state.atvd = []

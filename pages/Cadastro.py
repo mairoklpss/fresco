@@ -9,7 +9,7 @@ with open("cadastro.css") as editor:
 
 
 # Título da página
-st.title("Cadastro de Paciente")
+st.write('<p style="font-size:60px;font-weight:Bold;text-align:center">Cadastro de Paciente</p>', unsafe_allow_html=True)
 st.write('<p style="font-size:20px;color:black;text-align:center">Por favor, preencha os dados abaixo para o seu cadastro.</p>',unsafe_allow_html=True)
 st.sidebar.image("img/png-transparent-health-care-public-health-medicine-hospital-health-logo-medical-care-mental-health-thumbnail-removebg-preview.png")
 image_url = "https://img.freepik.com/premium-vector/white-abstract-background-design_1208459-106.jpg?semt=ais_hybrid"  # Exemplo: "imagens/fundo.jpg"
@@ -83,3 +83,6 @@ else:
             st.session_state["telefone"] = telefone
             st.session_state["cadastro_realizado"] = True           
             st.switch_page("pages\Informações de Saúde.py")
+import streamlit as st
+
+# Injetar CSS personalizado

@@ -1,16 +1,37 @@
 import streamlit as st
-
+st.set_page_config(page_title="Ingestão de Água - Saúde")
 # Inicializa o estado se não existir
+with open("ing.css") as editor:
+    st.markdown(f"<style>{editor.read()}</style>",unsafe_allow_html=True)
+
 if 'aguaBebida' not in st.session_state:
     st.session_state.aguaBebida = []
 
-st.title("Ingestão de Água")
+st.sidebar.image("img/png-transparent-health-care-public-health-medicine-hospital-health-logo-medical-care-mental-health-thumbnail-removebg-preview.png")
+image_url = "https://img.freepik.com/premium-vector/white-abstract-background-design_1208459-106.jpg?semt=ais_hybrid"  # Exemplo: "imagens/fundo.jpg"
 
-st.subheader('Registre a quantidade de água que você irá beber durante o dia.')
+# Adicione a imagem de fundo com HTML e CSS
+st.markdown(
+    f"""
+    <style>
+    .stApp {{
+        background-image: url("{image_url}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+st.write('<p style="font-size:60px;font-weight:bold;text-align:center">Ingestão de Água</p>',unsafe_allow_html=True)
+
+st.write('<p style="font-size:20px;text-align:center;font-weight:bold">Registre a quantidade de água que você irá beber durante o dia.</p>',unsafe_allow_html=True)
 
 # Verifica se as informações do usuário estão no session_state
 if "nome" in st.session_state and "email" in st.session_state and "senha" in st.session_state and "peso" in st.session_state:
-    st.write("Coletamos suas informações de saúde e calculamos a quantidade ideal de água que você deve ingerir todos os dias.")
+    st.write('<p style="font-size:17px;text-align:center;color:blue">Coletamos suas informações de saúde e calculamos a quantidade ideal de água que você deve ingerir todos os dias.</p>',unsafe_allow_html=True)
     
     with st.form("ingestao de agua"):
         peso = st.session_state['peso']
@@ -39,12 +60,15 @@ if "nome" in st.session_state and "email" in st.session_state and "senha" in st.
             st.subheader(f"Total de água ingerido até agora: {total_bebido:.1f} L.") 
             st.session_state['agua'] = True  # Marca que a meta foi atingida
 
+    #aparecer mensagem se atingiu a meta.
     if "agua" in st.session_state and st.session_state["agua"]:
         st.success("Parabéns! Você atingiu sua meta!")
 
+    #navegar para outra página
     navegar = st.button("Ir para Registro de Atividades")
     if navegar:
-        st.switch_page("pages\Registro de Atividades.py")    
+        st.switch_page("pages\Registro de Atividades.py")
+            
 
 
         

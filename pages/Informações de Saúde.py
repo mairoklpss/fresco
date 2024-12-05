@@ -1,12 +1,15 @@
 import streamlit as st
+st.set_page_config(page_title="Informações de Saúde - Saúde")
 
-st.title("Cadastro de Paciente")
-st.subheader("Por favor, preencha os dados abaixo para o seu cadastro.")
+with open("inicio.css") as edito:
+    st.markdown(f"<style>{edito.read()}</style>",unsafe_allow_html=True)
+
+st.write('<p style="font-size:60px;text-align:center;font-weight:bold">Cadastro de Paciente</p>',unsafe_allow_html=True)
+st.write('<p style="font-size:25px;text-align:center">Por favor, preencha os dados abaixo para o seu cadastro.</p>',unsafe_allow_html=True)
 st.sidebar.image("img/png-transparent-health-care-public-health-medicine-hospital-health-logo-medical-care-mental-health-thumbnail-removebg-preview.png")
-image_url = "https://img.freepik.com/free-vector/medical-healthcare-blue-color_1017-26807.jpg"  # Exemplo: "imagens/fundo.jpg"
+image_url = "https://img.freepik.com/premium-vector/white-abstract-background-design_1208459-106.jpg?semt=ais_hybrid"  # Exemplo: "imagens/fundo.jpg"
 
 # Adicione a imagem de fundo com HTML e CSS
-
 st.markdown(
     f"""
     <style>
